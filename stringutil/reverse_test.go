@@ -17,3 +17,11 @@ func TestReverse(t *testing.T) {
     }
   }
 }
+
+func BenchmarkReverse(b *testing.B) {
+	str := "Hello World"
+	for i := 0; i < b.N; i++ {
+		str = Reverse(str)
+		//str += "!"
+	}
+}
