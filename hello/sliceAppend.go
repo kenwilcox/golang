@@ -17,6 +17,10 @@ func main() {
 	// We can add more than once element at a time.
 	s = append(s, 2, 3, 4)
 	printSlice(s)
+
+	t := make([]int, len(s), (cap(s)+1)*2)
+	copy(t, s)
+	printSlice(t)
 }
 
 func printSlice(s []int) {
