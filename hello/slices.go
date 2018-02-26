@@ -44,4 +44,15 @@ func main() {
 		{13, true},
 	}
 	fmt.Println(st)
+
+	i := []int{2, 3, 5, 7, 11, 13}
+
+	i = i[1:4]
+	fmt.Println(i)
+
+	i = i[:2]
+	fmt.Println(i)
+
+	i = i[1:]
+	fmt.Println(i)
 }
