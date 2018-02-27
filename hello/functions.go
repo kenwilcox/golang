@@ -43,6 +43,6 @@ func main() {
 	// finonacci
 	f := fibonacci()
 	for i := 0; i < 70; i++ {
-		fmt.Println(f())
+		fmt.Println(i, f())
 	}
 }
