@@ -16,6 +16,10 @@ type T struct {
 // This method means type T implements the interface I,
 // but we don't need to explicitly declare that it does so
 func (t *T) M() {
+	if t == nil {
+		fmt.Println("<nil>")
+		return
+	}
 	fmt.Println(t.S)
 }
 
@@ -26,7 +30,13 @@ func (f F) M() {
 }
 
 func main() {
-	var i I = &T{"Hello"}
+	var i I
+	var t *T
+	i = t
+	describe(i)
+	i.M()
+
+	i = &T{"Hello"}
 	describe(i)
 	i.M()
 
