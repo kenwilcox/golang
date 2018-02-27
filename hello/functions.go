@@ -18,10 +18,10 @@ func adder() func(int) int {
 }
 
 func fibonacci() func() int {
-	x, y, z := 0, 1, 0
+	x, y := 0, 1
 	return func() int {
-		z, x, y = x, y, x+y
-		return z
+		x, y = y, x+y
+		return y - x
 	}
 }
 
