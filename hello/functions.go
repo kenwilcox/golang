@@ -17,6 +17,14 @@ func adder() func(int) int {
 	}
 }
 
+func fibonacci() func() int {
+	x, y, z := 0, 1, 0
+	return func() int {
+		z, x, y = x, y, x+y
+		return z
+	}
+}
+
 func main() {
 	hypot := func(x, y float64) float64 {
 		return math.Sqrt(x*x + y*y)
@@ -30,5 +38,11 @@ func main() {
 	pos, neg := adder(), adder()
 	for i := 0; i < 10; i++ {
 		fmt.Println(pos(1), neg(-2*i))
+	}
+
+	// finonacci
+	f := fibonacci()
+	for i := 0; i < 70; i++ {
+		fmt.Println(f())
 	}
 }
